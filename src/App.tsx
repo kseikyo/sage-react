@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Bathtub from "./components/Bathtub/";
 
-function App() {
+import "./global.css";
+
+interface AppProps {}
+
+const App: React.FC<AppProps> = ({}) => {
+  const [fillingWater, setFillingWater] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <main>
+        <Bathtub fillingWater={fillingWater} />
+        <div className="container">
+          <button
+            onClick={() => {
+              setFillingWater(true);
+            }}
+          >
+            Increase water level!
+          </button>
+          <button
+            onClick={() => {
+              setFillingWater(false);
+            }}
+          >
+            Decrease water level!
+          </button>
+        </div>
+      </main>
+      <p>This is not for comercial use.</p>
+    </>
   );
-}
+};
 
 export default App;

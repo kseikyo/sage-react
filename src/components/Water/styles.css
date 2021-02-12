@@ -1,0 +1,6 @@
+.water {
+    background-color: aqua;
+    width: 100%;
+    /* 1.25rem is equal to 20px */
+    height: 1.25rem;
+}
